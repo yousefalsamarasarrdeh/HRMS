@@ -62,6 +62,9 @@
                         @endforeach
                         </tbody>
                     </table>
+                    <div class="col-md-12 text-center">
+                        {{$data->links('pagination::bootstrap-4')}}
+                    </div>
                 @else
                     <p class="bg-danger text-center"> عفوا لاتوجد بيانات لعرضها</p>
                 @endif

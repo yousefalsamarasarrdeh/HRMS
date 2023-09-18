@@ -24,46 +24,52 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{route('admin_panel_settings.index')}}" class="nav-link active">
+                        <a href="{{route('admin_panel_settings.index')}}" class="nav-link {{(request()->is('admin/generalSetting*'))?'active':'' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>الضبط العام</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('Finance_calelanders.index')}}" class="nav-link active">
+                        <a href="{{route('Finance_calelanders.index')}}" class="nav-link {{(request()->is('admin/Finance_calelander*'))?'active':'' }} ">
                             <i class="far fa-circle nav-icon"></i>
                             <p>السنوات المالية</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('branches.index')}}" class="nav-link active">
+                        <a href="{{route('branches.index')}}" class="nav-link {{(request()->is('admin/brancheees*'))?'active':'' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>الفروع</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('Shiftstypes.index')}}" class="nav-link active">
+                        <a href="{{route('Shiftstypes.index')}}" class="nav-link {{(request()->is('admin/Shiftstypes*'))?'active':'' }}">
                             <i class="far fa-circle nav-icon"></i>
                             <p>انواع الشفتات</p>
                         </a>
                     </li>
+
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{route('departements.index')}}" class="nav-link {{(request()->is('admin/departements*'))?'active':'' }}">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Inactive Page</p>
+                            <p>ادارات الشركة</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{route('jobs_categories.index')}}" class="nav-link {{(request()->is('admin/jobs_categories*'))?'active':'' }}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>فئات الوظائف</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('Qualifications.index') }}" class="nav-link  {{ (request()->is('admin/Qualifications*'))?'active':'' }}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>     مؤهلات الموظفين</p>
+                        </a>
+                    </li>
+
                 </ul>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
-                    <p>
-                        Simple Link
-                        <span class="right badge badge-danger">New</span>
-                    </p>
-                </a>
-            </li>
+
         </ul>
     </nav>
     <!-- /.sidebar-menu -->

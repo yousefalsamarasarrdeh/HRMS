@@ -88,6 +88,10 @@ function delete($model=null,$where=array()){
     $flag=$model::where($where)->delete();
     return $flag;
 }
+function destroy($model=null,$where=array()){
+    $flag=$model::where($where)->delete();
+    return $flag;
+}
 function get_sum_where($model=null,$field_name=null,$where=array()){
     $sum=$model::where($where)->sum($field_name);
     return $sum;
