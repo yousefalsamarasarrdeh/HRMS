@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\OccasionsController;
+use App\Http\Controllers\Admin\ResignationsController;
+use App\Http\Controllers\Admin\EmployeesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,6 +75,31 @@ Route::group(['prefix'=>'admin','middleware'=>'auth:admin'],function () {
     Route::post('/Qualificationsupdate/{id}',[\App\Http\Controllers\Admin\QualificationsController::class,'update'])->name('Qualifications.update');
     Route::get('/Qualificationsdelete/{id}',[\App\Http\Controllers\Admin\QualificationsController::class,'destroy'])->name('Qualifications.delete');
 
+
+    /*  بداية  المناسبات الرسمية*/
+    Route::get('/occasions', [\App\Http\Controllers\Admin\OccasionsController::class, 'index'])->name('occasions.index');
+    Route::get('/occasionsCreate', [OccasionsController::class, 'create'])->name('occasions.create');
+    Route::post('/occasionsStore', [OccasionsController::class, 'store'])->name('occasions.store');
+    Route::get('/occasionsEdit/{id}', [OccasionsController::class, 'edit'])->name('occasions.edit');
+    Route::post('/occasionsUpdate/{id}', [OccasionsController::class, 'update'])->name('occasions.update');
+    Route::get('/occasionsDestroy/{id}', [OccasionsController::class, 'destroy'])->name('occasions.destroy');
+
+    /*  بداية  انواع ترك العمل */
+    Route::get('/Resignations', [ResignationsController::class, 'index'])->name('Resignations.index');
+    Route::get('/ResignationsCreate', [ResignationsController::class, 'create'])->name('Resignations.create');
+    Route::post('/ResignationsStore', [ResignationsController::class, 'store'])->name('Resignations.store');
+    Route::get('/ResignationsEdit/{id}', [ResignationsController::class, 'edit'])->name('Resignations.edit');
+    Route::post('/ResignationsUpdate/{id}', [ResignationsController::class, 'update'])->name('Resignations.update');
+    Route::get('/ResignationsDestroy/{id}', [ResignationsController::class, 'destroy'])->name('Resignations.destroy');
+
+
+    /*  بداية  الموظفين   */
+    Route::get('/Employees/index', [EmployeesController::class, 'index'])->name('Employees.index');
+    Route::get('/Employees/create', [EmployeesController::class, 'create'])->name('Employees.create');
+    Route::post('/Employees/store', [EmployeesController::class, 'store'])->name('Employees.store');
+    Route::get('/Employees/edit/{id}', [EmployeesController::class, 'edit'])->name('Employees.edit');
+    Route::post('/Employees/update/{id}', [EmployeesController::class, 'update'])->name('Employees.update');
+    Route::get('/Employees/destroy/{id}', [EmployeesController::class, 'destroy'])->name('Employees.destroy');
 
 
 });

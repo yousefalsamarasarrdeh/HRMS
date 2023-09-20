@@ -23,6 +23,11 @@
             {{ session('status') }}
         </div>
     @endif
+    @if (session('error'))
+        <div class="alert alert-success">
+            {{ session('error') }}
+        </div>
+    @endif
     <div class="content">
         <div class="container-fluid">
             <div class="row">
