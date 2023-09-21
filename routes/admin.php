@@ -100,6 +100,8 @@ Route::group(['prefix'=>'admin','middleware'=>'auth:admin'],function () {
     Route::get('/Employees/edit/{id}', [EmployeesController::class, 'edit'])->name('Employees.edit');
     Route::post('/Employees/update/{id}', [EmployeesController::class, 'update'])->name('Employees.update');
     Route::get('/Employees/destroy/{id}', [EmployeesController::class, 'destroy'])->name('Employees.destroy');
+    Route::get('/test', [EmployeesController::class, 'test'])->name('Employees.test');
+    Route::post('/teststore', [EmployeesController::class, 'teststore'])->name('e.test');
 
 
 });
@@ -110,3 +112,5 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>'guest:admin'
 Route::fallback(function (){
     return redirect()->route('showLogin');
 });
+
+
