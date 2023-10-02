@@ -102,6 +102,9 @@ Route::group(['prefix'=>'admin','middleware'=>'auth:admin'],function () {
     Route::get('/Employees/destroy/{id}', [EmployeesController::class, 'destroy'])->name('Employees.destroy');
     Route::get('/test', [EmployeesController::class, 'test'])->name('Employees.test');
     Route::post('/teststore', [EmployeesController::class, 'teststore'])->name('e.test');
+    Route::post("/Employees/get_governorates", [EmployeesController::class, 'get_governorates'])->name('Employees.get_governorates');
+    Route::post("/Employees/get_centers", [EmployeesController::class, 'get_centers'])->name('Employees.get_centers');
+
 
 
 });
